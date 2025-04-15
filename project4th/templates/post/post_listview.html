@@ -1,0 +1,6 @@
+{%extends 'base.html'%}
+{%block content%}
+{%for p in datas%}
+<a href="{%url 'post_detailview' p.id%}">{{p.title}}</a> 
+{%endfor%}
+{%endblock%}
