@@ -1,6 +1,25 @@
 {%extends 'base.html'%}
 {%block content%}
-{%for p in datas%}
-<a href="{%url 'post_detailview' p.id%}">{{p.title}}</a> 
-{%endfor%}
+<div class="products-page">
+    <!-- Big Centered Title -->
+    <h1 class="products-title">Products</h1>
+
+    <!-- Product List -->
+    {% for p in datas %}
+    <div class="post-card">
+        <a href="{% url 'post_detailview' p.id %}" class="post-title">
+            {{ p.title }}
+        </a>
+        <p class="post-description">
+            {{ p.description }}
+        </p>
+        <div class="post-price">
+            ${{ p.price }}
+            {% if p.on_sale %}
+                <span class="post-badge">On Sale</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {%endblock%}

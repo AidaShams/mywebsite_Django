@@ -6,5 +6,6 @@ class post(models.Model):
     description = models.CharField(max_length=100)
     price = models.IntegerField()
     seller = models.ForeignKey('auth.user', on_delete=models.CASCADE)
+
     def __str__(self):
         return f"{self.title}"
