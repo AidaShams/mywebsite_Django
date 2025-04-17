@@ -1,4 +1,15 @@
 {%extends 'base.html'%}
 {%block content%}
-{{datas.title}}<br/> {{datas.description}}<br/> {{datas.price}} <br/>{{datas.seller}} 
+<div class="detail-container">
+    <h1 class="detail-title">{{ datas.title }}</h1>
+    {% if datas.price %}
+    <div class="detail-price">${{ datas.price }}</div>
+    {% endif %}
+    
+    <div class="detail-description">
+        {{ datas.description }}
+    </div>
+    
+    <a href="{% url 'post_listview' %}" class="back-button">← Back to Posts</a>
+</div>
 {%endblock%}

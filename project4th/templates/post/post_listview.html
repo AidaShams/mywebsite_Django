@@ -1,24 +1,12 @@
 {%extends 'base.html'%}
 {%block content%}
-<div class="products-page">
-    <!-- Big Centered Title -->
-    <h1 class="products-title">Products</h1>
-
-    <!-- Product List -->
+<div class="post-container">
     {% for p in datas %}
     <div class="post-card">
-        <a href="{% url 'post_detailview' p.id %}" class="post-title">
-            {{ p.title }}
-        </a>
-        <p class="post-description">
-            {{ p.description }}
-        </p>
-        <div class="post-price">
-            ${{ p.price }}
-            {% if p.on_sale %}
-                <span class="post-badge">On Sale</span>
-            {% endif %}
-        </div>
+        <a href="{% url 'post_detailview' p.id %}" class="post-title">{{ p.title }}</a>
+        {% if p.price %}
+        <div class="price-tag">${{ p.price }}</div>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
