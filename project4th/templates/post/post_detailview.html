@@ -12,5 +12,6 @@
     
     <a href="{% url 'post_listview' %}" class="back-button">← Back to Posts</a>
     <a href="{% url 'post_updateview' pk=datas.id %}">Update</a>
+    <a href="{% url 'post_deleteview' pk=datas.id %}">Delete</a>
 </div>
 {%endblock%}

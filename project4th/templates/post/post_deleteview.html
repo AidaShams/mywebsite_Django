@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block content%}
+<form method="POST" action="">
+    {{form.as_p}}
+    {% csrf_token %}
+    <p>Are you sure?</p>
+    <input type="submit" value="submit" />
+</form>
+
+{%endblock%}
