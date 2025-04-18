@@ -10,6 +10,7 @@ class post(models.Model):
     def __str__(self):
         return f"{self.title}"
     def get_absolute_url(self):
-        return reverse("post/post_createview.html", kwargs={"pk":self.pk})
+        return reverse("post_detailview", kwargs={"pk":self.pk})
     
+    #it must redirect into detailview.html
     #explain again why pk instead of id
