@@ -1,20 +1,29 @@
   /* Main container styling */
   .post-container {
-    max-width: 800px;
+    max-width: 1400px; /* Increased from 800px */
     margin: 30px auto;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+        url('../img/gaming-pattern.png') center/cover;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 100px; /* Space between cards */
 }
+
 
 /* Post card styling */
 .post-card {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     border-left: 5px solid #6a11cb;
+    margin-bottom: 0; /* Remove since grid handles spacing */
+    position: relative;
+    height: 100%; /* Uniform height */
 }
 
 .post-card:hover {
@@ -157,3 +166,92 @@
     transform: scale(1.02);
     transition: all 0.3s ease;
   }
+
+/* Background texture for container */
+.post-container {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+        url('../img/gaming-pattern.png') center/cover;
+}
+
+/* Price tag with icon */
+.price-tag {
+    background: 
+        url('../img/tag-icon.svg') no-repeat 10px center/15px,
+        linear-gradient(to right, #11998e, #38ef7d);
+    padding-left: 35px; /* Space for icon */
+}
+
+/* Decorative ribbon for cards */
+/* .post-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: url('../img/corner-ribbon.svg') no-repeat;
+    background-size: contain;
+} */
+
+
+/* to ensure all cards in the same row have same lenght */
+.post-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-title, .price-tag {
+    flex-grow: 0; /* Prevent stretching */
+}
+
+.post-description {
+    flex-grow: 1; /* Push price tag to bottom */
+}
+
+/* Main page title styling */
+.page-title {
+    font-family: 'Orbitron', sans-serif; /* Gaming font */
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0 30px;
+    color: transparent;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 50%, #11998e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+/* Optional glowing underline effect */
+.page-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    border-radius: 2px;
+    box-shadow: 0 0 10px #ff416c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .page-title::after {
+        width: 150px;
+    }
+}
