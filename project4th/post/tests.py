@@ -25,3 +25,19 @@ class test_post(TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(res2.status_code, 404)
         self.assertTemplateUsed(res, "post/post_detailview.html")
+    def test_get_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(), '/post/1')
+    def test_createview(self):
+        res = self.client.post(reverse('post_createview'),{"title":"test1", "description":"test2", "price":123, "seller": self.user.id})
+        self.assertEqual(res.status_code, 302)
+        self.assertEqual(post.objects.last().title, "test1")
+        self.assertEqual(post.objects.last().description, "test2")
+        self.assertEqual(post.objects.last().price, 123)
+    def test_updateview(self):
+        res = self.client.post(reverse('post_updateview', args="1"), {"title":"test1111", "description":"test2222", "price":123456, "seller": self.user.id})
+        self.assertEqual(res.status_code, 302)
+    def test_deleteview(self):
+        res = self.client.post(reverse('post_deleteview', args="1"))
+        self.assertEqual(res.status_code, 302)
+
+
