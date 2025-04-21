@@ -14,3 +14,4 @@ class post(models.Model):
     
     #it must redirect into detailview.html
     #explain again why pk instead of id
+    #study pk and fk in database
