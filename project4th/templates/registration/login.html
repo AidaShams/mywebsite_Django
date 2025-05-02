@@ -1,9 +1,38 @@
 {%extends 'base.html'%}
 {%block content%}
-<form method="POST" action="">
-    {{form.as_p}}
-    {% csrf_token %}
-    <input type="submit" value="submit" />
-</form>
+<div class="login-container">
+    <!-- Corner decorations -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+    
+    <!-- Pixel art decoration -->
+    <div class="pixel-art">
+        <div class="pixel pixel-blue"></div>
+        <div class="pixel pixel-purple"></div>
+        <div class="pixel pixel-pink"></div>
+        <div class="pixel pixel-purple"></div>
+        <div class="pixel pixel-blue"></div>
+    </div>
+    
+    <h2 class="login-title">Player Login</h2>
+    
+    <form method="POST" action="" class="login-form">
+        {% csrf_token %}
+        
+        {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                {{ field.errors }}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <input type="submit" value="Start Game" class="submit-btn" />
+    </form>
+</div>
 
 {%endblock%}

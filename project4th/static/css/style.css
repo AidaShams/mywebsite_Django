@@ -255,3 +255,167 @@
         width: 150px;
     }
 }
+
+ /* Main container styling */
+ .login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    border: 1px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gaming-themed decorations */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, 
+        rgba(0, 255, 255, 0.1) 0%, 
+        rgba(0, 255, 255, 0) 20%, 
+        rgba(0, 255, 255, 0) 80%, 
+        rgba(0, 255, 255, 0.1) 100%);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Corner decorations */
+.corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-color: #00ffff;
+    border-style: solid;
+    border-width: 0;
+}
+
+.corner-tl {
+    top: 0;
+    left: 0;
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-radius: 5px 0 0 0;
+}
+
+.corner-tr {
+    top: 0;
+    right: 0;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-radius: 0 5px 0 0;
+}
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-radius: 0 0 0 5px;
+}
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 3px;
+    border-right-width: 3px;
+    border-radius: 0 0 5px 0;
+}
+
+/* Form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-title {
+    color: #00ffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Input field styling */
+.form-input {
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    padding: 12px 15px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    background: rgba(10, 25, 47, 0.9);
+}
+
+/* Submit button styling */
+.submit-btn {
+    background: linear-gradient(90deg, #00ffff 0%, #0088ff 100%);
+    border: none;
+    color: #111;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #00ffff 0%, #00aaff 100%);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Label styling */
+label {
+    color: #00ffff;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Error messages */
+.errorlist {
+    color: #ff3366;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 13px;
+}
+
+/* Pixel art decoration */
+.pixel-art {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pixel {
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+}
+
+.pixel-blue { background-color: #00ffff; }
+.pixel-purple { background-color: #9900ff; }
+.pixel-pink { background-color: #ff00aa; }
