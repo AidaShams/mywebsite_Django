@@ -10,7 +10,18 @@
     </head>
 
     <body>
-        {%block content%} TEST RUNNING... {%endblock%}
+        <ul>
+            {%if user.is_authenticated%}<h2 class="user-title"> WELCOME, {{user.username}}</h2>
+            <form method="POST" action="{%url 'logout'%}">
+                {% csrf_token %}
+                <input type="submit" value="Logout" class="submit-btn"/>
+            </form>
+            {%else%}
+            <a href="{% url 'login' %}" ><li>Login</li></a>
+            <a href="{% url 'register' %}"><li>Register</li></a>
+            {%endif%}
+        </ul>
+            {%block content%}{%endblock%}
     </body>
 
 </html>
