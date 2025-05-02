@@ -125,3 +125,7 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL  = 'post_listview'
+
+#for adding images:
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = [str(BASE_DIR.joinpath('media'))]

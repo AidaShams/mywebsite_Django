@@ -2,6 +2,9 @@
 {%block content%}
 <div class="detail-container">
     <h1 class="detail-title">{{ datas.title }}</h1>
+    <!-- {% if datas.image %}
+    <img src="{{ datas.image.url }}" alt="{{ datas.title }}" style="max-width: 300px;">
+    {% endif %} -->
     {% if datas.price %}
     <div class="detail-price">${{ datas.price }}</div>
     {% endif %}

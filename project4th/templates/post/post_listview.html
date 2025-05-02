@@ -2,12 +2,21 @@
 {%block content%}
 <h1 class="page-title">SURVIVAL GAMES</h1>
 <div class="post-container">
-    <!-- Your existing grid content -->
-</div>
-<div class="post-container">
     {% for p in datas %}
     <div class="post-card">
+        <!-- Thumbnail Container
+        <div class="thumbnail-container">
+            {% if p.image %}
+                <img src="{{ p.image.url }}" alt="{{ p.title }}" class="game-thumbnail">
+            {% else %}
+                <div class="placeholder-thumbnail">
+                    <span class="placeholder-icon">🎮</span>
+                </div>
+            {% endif %}
+        </div> -->
+        
         <a href="{% url 'post_detailview' p.id %}" class="post-title">{{ p.title }}</a>
+        
         {% if p.price %}
         <div class="price-tag">${{ p.price }}</div>
         {% endif %}
