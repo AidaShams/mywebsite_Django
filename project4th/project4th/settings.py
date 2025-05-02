@@ -128,6 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL  = 'post_listview'
 LOGOUT_REDIRECT_URL  = 'login'
 
+AUTH_USER_MODEL = 'accounts.CustomUserRegistration'
 #for adding images:
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = [str(BASE_DIR.joinpath('media'))]
