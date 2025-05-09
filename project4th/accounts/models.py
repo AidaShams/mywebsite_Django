@@ -7,3 +7,4 @@ class CustomUserRegistration(AbstractUser):
 #to fix the adding user issue
 # def __str__(self):
 #     return self.name.username
+#TypeError at /admin/accounts/customuserregistration/add/
