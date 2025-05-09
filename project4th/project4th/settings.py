@@ -125,7 +125,7 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL  = 'post_listview'
+LOGIN_REDIRECT_URL  = 'home'
 LOGOUT_REDIRECT_URL  = 'login'
 
 AUTH_USER_MODEL = 'accounts.CustomUserRegistration'
