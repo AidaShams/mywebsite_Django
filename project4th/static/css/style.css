@@ -626,3 +626,19 @@ label {
     --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
     --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
   }
+
+/* post enter
+.postenter-btn {
+    background: linear-gradient(90deg, #00ffff 0%, #0088ff 100%);
+    border: none;
+    color: #111;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+} */

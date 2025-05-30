@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post',
     'accounts',
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,5 @@ AUTH_USER_MODEL = 'accounts.CustomUserRegistration'
 #for adding images:
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = [str(BASE_DIR.joinpath('media'))]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
