@@ -1,6 +1,14 @@
-{%extends 'base.html'%}
-{%block content%}
-{{object.title}}
-{{object.description}}
-{{object.author}}
-{%endblock content%}
+{% extends 'base.html' %}
+{% block content %}
+    {% for c in objects.comments.all %}
+        {{ c.comment }} | {{ c.writer }}
+    {% endfor %}
+    {{ object.title }}
+    {{ object.description }}
+    {{ object.author }}
+
+    <form method="POST" action="">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}
